@@ -44,3 +44,17 @@
   background-color: #8a2b06;
   color: white;
 }
+
+.error {
+  text-align: center;
+  font-weight: 700;
+  font-size: larger;
+  color: red;
+}
+
+.message {
+  text-align: center;
+  font-weight: 700;
+  font-size: larger;
+  color: rgba(41, 40, 40, 0.924);
+}
