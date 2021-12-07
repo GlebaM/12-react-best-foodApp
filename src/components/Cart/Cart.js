@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useContext } from "react";
 
+// import { orderPath } from "../../.env.development";
+
 import Modal from "../UI/Modal";
 import CartItem from "./CartItem";
 import classes from "./Cart.module.css";
@@ -105,6 +107,7 @@ const Cart = (props) => {
   const isSubmittingModalContent = (
     <p className={classes.message}>Sending order data...</p>
   );
+
   const didSubmitModalContent = (
     <React.Fragment>
       <p className={classes.message}>Successfully sent the order</p>
@@ -115,6 +118,7 @@ const Cart = (props) => {
       </div>
     </React.Fragment>
   );
+
   const sendingErrorModalContent = (
     <React.Fragment>
       <p className={classes.error}>{errorMessage}</p>

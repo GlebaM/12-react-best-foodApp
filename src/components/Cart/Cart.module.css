@@ -2,8 +2,15 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  max-height: 20rem;
-  overflow: auto;
+  max-height: min-content;
+}
+
+.cart-items > li:first-of-type {
+  margin-top: 0;
+}
+
+.cart-items > li:last-of-type {
+  margin-bottom: 2rem;
 }
 
 .total {
@@ -23,7 +30,7 @@
   font: inherit;
   cursor: pointer;
   background-color: transparent;
-  border: 1px solid #8a2b06;
+  border: 1px solid var(--primary-dark);
   padding: 0.5rem 2rem;
   border-radius: 25px;
   margin-left: 1rem;
@@ -31,17 +38,17 @@
 
 .actions button:hover,
 .actions button:active {
-  background-color: #5a1a01;
-  border-color: #5a1a01;
+  background-color: var(--primary-dark-2);
+  border-color: var(--primary-dark-2);
   color: white;
 }
 
 .actions .button--alt {
-  color: #8a2b06;
+  color: var(--primary-dark);
 }
 
 .actions .button {
-  background-color: #8a2b06;
+  background-color: var(--primary-dark);
   color: white;
 }
 
@@ -49,7 +56,7 @@
   text-align: center;
   font-weight: 700;
   font-size: larger;
-  color: red;
+  color: var(--error-color);
 }
 
 .message {

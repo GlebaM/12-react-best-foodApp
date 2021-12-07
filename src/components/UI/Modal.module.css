@@ -10,15 +10,37 @@
 
 .modal {
   position: fixed;
-  top: 15vh;
+  top: 5vh;
   left: 5%;
   width: 90%;
+  max-height: 90vh;
   background-color: white;
   padding: 1rem;
   border-radius: 14px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
   z-index: 30;
+  overflow-y: scroll;
   animation: slide-down 300ms ease-out forwards;
+}
+
+.modal::-webkit-scrollbar {
+  border-bottom-right-radius: 14px;
+  border-top-right-radius: 14px;
+  width: 18px;
+  height: 25px;
+  overflow: hidden;
+}
+
+.modal::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background-color: var(--primary-dark-2); /* color of the scroll thumb */
+  border-radius: 12px; /* roundness of the scroll thumb */
+  border-top-left-radius: 0px; /* roundness of the scroll thumb */
+  border-bottom-left-radius: 0px; /* roundness of the scroll thumb */
+  border: 2px solid white; /* creates padding around scroll thumb */
 }
 
 @media (min-width: 768px) {

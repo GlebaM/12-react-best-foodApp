@@ -1,9 +1,9 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 
 import classes from "./Checkout.module.css";
 
 const isEmpty = (value) => value.trim() === "";
-const isFiveChars = (value) => value.trim().length === 5;
+const isFiveChars = (value) => value.trim().length === 6;
 
 const Checkout = (props) => {
   const [formInputsValidity, setFormInputsValidity] = useState({
@@ -17,6 +17,10 @@ const Checkout = (props) => {
   const streetInputRef = useRef();
   const postalInputRef = useRef();
   const cityInputRef = useRef();
+
+  useEffect(() => {
+    nameInputRef.current.focus();
+  }, []);
 
   const confirmHandler = (event) => {
     event.preventDefault();
@@ -75,7 +79,7 @@ const Checkout = (props) => {
         <label htmlFor="postal">Postal Code</label>
         <input type="text" id="postal" ref={postalInputRef} />
         {!formInputsValidity.postalCode && (
-          <p>Please enter a valid postal code (5 characters long)!</p>
+          <p>Please enter a valid postal code (6 characters long)!</p>
         )}
       </div>
       <div className={formClasses(formInputsValidity.city)}>
